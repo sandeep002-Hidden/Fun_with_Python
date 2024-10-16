@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
+import random
 RUN = 32
 
 def insertion_sort(arr, left, right, bars, speed):
@@ -61,7 +61,7 @@ def tim_sort(arr, bars, speed):
 def update_bars(arr, bars, speed):
     for bar, val in zip(bars, arr):
         bar.set_height(val)
-    plt.pause(speed)
+    plt.pause(0.05)
 
 def tim_sort_visual(arr, speed=0.1):
     fig, ax = plt.subplots()
@@ -78,10 +78,7 @@ def tim_sort_visual(arr, speed=0.1):
     tim_sort(arr, bars, speed)
     plt.show()
 
-arr = [29, 84, 17, 65, 98, 14, 56, 3, 44, 92, 
-       39, 71, 11, 27, 64, 50, 81, 6, 19, 99, 
-       47, 33, 75, 61, 23, 2, 89, 43, 31, 93, 
-       8, 13, 41, 55, 74, 37, 18, 97, 52, 21, 
-       9, 5, 67, 78, 12, 88, 20, 32, 59, 70]
+arr = [random.randint(1, 1000) for _ in range(200)]
 
-tim_sort_visual(arr, speed=0.05)
+
+tim_sort_visual(arr, speed=0.01)
