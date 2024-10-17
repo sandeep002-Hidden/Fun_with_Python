@@ -96,6 +96,7 @@ def generate_maze(WIDTH=1200, HEIGHT=600, Tile=30):
                 visitedCount += 1
                 stack.append(currentCell)
                 remove_walls(currentCell, nextCell)
+
                 
                 currentCell = nextCell
             elif stack:
