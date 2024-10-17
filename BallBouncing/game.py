@@ -3,8 +3,8 @@ import math
 import random
 
 def generate_random_speed(min_speed, max_speed):
-    speed_x = random.randrange(2,5)
-    print(speed_x)
+    # print
+    speed_x = random.uniform(min_speed, max_speed) * random.choice([-1, 1])  
     return speed_x
 
 pygame.init()
@@ -24,7 +24,7 @@ ballX, ballY = CIRCLE_CENTER
 
 def is_ball_inside_circle(ballX, ballY):
     distance_from_center = math.sqrt((ballX - CIRCLE_CENTER[0]) ** 2 + (ballY - CIRCLE_CENTER[1]) ** 2)
-    # print(distance_from_center,BALL_RADIUS,CIRCLE_RADIUS)
+    print(distance_from_center,BALL_RADIUS,CIRCLE_RADIUS)
     return distance_from_center + BALL_RADIUS <= CIRCLE_RADIUS
 
 running = True
